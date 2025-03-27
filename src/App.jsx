@@ -19,21 +19,15 @@ export default function App() {
             <div> {film.title}</div>
           )
         }
-        <div class="mb-3">
-          <label for="" class="form-label">Name</label>
-          <input onChange={e => setGenre(e.target.value)}
-            type="text"
-            class="form-control"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder=""
-            value={genre}
-          />
-          <small id="helpId" class="form-text text-muted">Help text</small>
-        </div>
 
-        <select name="movie" id="movie-select">
+
+
+
+        <select
+          name="movie"
+          id="movie-select"
+          value={genre}
+          onChange={e => setGenre(e.target.value)}>
           <option value="">--Please choose an option--</option>
           <option value="">Fantascienza</option>
           <option value="">Thriller</option>
