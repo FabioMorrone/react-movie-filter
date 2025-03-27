@@ -4,27 +4,27 @@ import moviesList from "./data/movies"
 
 export default function App() {
   const [genre, setGenre] = useState('')
+  const [filmFiltrati, setFilmFiltrati] = useState(moviesList)
 
+  useEffect(() => {
+    console.log('hello');
 
+  }, [genre])
 
 
 
 
   return (
     <>
-      <div className='container'>
 
+      <div className="container">
         {
-          moviesList.map((film) =>
+          filmFiltrati.map((film) =>
             <div> {film.title}</div>
           )
         }
-
-
-
-
         <select
-          name="movie"
+          className="movie"
           id="movie-select"
           value={genre}
           onChange={e => setGenre(e.target.value)}>
@@ -36,10 +36,7 @@ export default function App() {
           <option value="">Fantascienza</option>
           <option value="">Thriller</option>
         </select>
-
       </div>
-
-
     </>
   )
 }
