@@ -16,6 +16,9 @@ export default function App() {
   return (
     <>
 
+      {
+        moviesList.map((film) => <div> {film}</div>)
+      }
 
 
     </>
