@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react'
-import movies from "./data/movies"
+import moviesList from "./data/movies"
 
 
 export default function App() {
 
+  const [movie, setMovie] = useState(moviesList)
+  const [filteredMovie, setFilteredMovie] = useState(movie)
 
+  useEffect(() => {
+    console.log(movie);
+
+  }, [])
 
 
   return (
     <>
+
+
 
     </>
   )
