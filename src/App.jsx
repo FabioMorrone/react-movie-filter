@@ -5,11 +5,13 @@ import moviesList from "./data/movies"
 export default function App() {
   const [genre, setGenre] = useState('')
   const [filmFiltrati, setFilmFiltrati] = useState(moviesList)
+  const [search, setSearch] = useState('')
+
 
   useEffect(() => {
-    console.log('hello');
+    setFilmFiltrati(genre.filter(task => task.toLowerCase().includes(search.toLowerCase())))
 
-  }, [genre])
+  }, [genre, search])
 
 
 
@@ -19,7 +21,7 @@ export default function App() {
 
       <div className="container">
         {
-          filmFiltrati.map((film) =>
+          setFilmFiltrati.map((film) =>
             <div> {film.title}</div>
           )
         }
